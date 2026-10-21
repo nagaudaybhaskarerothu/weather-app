@@ -1,0 +1,291 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 16px;
+  background: linear-gradient(135deg, #74b9ff, #6c5ce7, #303f9f);
+}
+
+.container {
+  width: 100%;
+  max-width: 460px;
+  padding: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 20px 60px rgba(17, 24, 80, 0.25);
+  text-align: center;
+}
+
+.app-header {
+  margin-bottom: 26px;
+}
+
+.header-icon {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 48px;
+  line-height: 1.2;
+}
+
+.app-header h1 {
+  margin-bottom: 10px;
+  color: #202b50;
+  font-size: 30px;
+}
+
+.app-header p {
+  color: #68708a;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* Search section */
+
+.search-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.search-box input {
+  min-width: 0;
+  flex: 1;
+  padding: 13px 14px;
+  border: 1px solid #d7dced;
+  border-radius: 12px;
+  outline: none;
+  background: #fff;
+  color: #202b50;
+}
+
+.search-box input:focus {
+  border-color: #6c5ce7;
+  box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.12);
+}
+
+.search-box button {
+  padding: 13px 17px;
+  border: none;
+  border-radius: 12px;
+  background: #6254d9;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.search-box button:hover {
+  background: #4b3db9;
+}
+
+.search-box button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+/* Loading and error messages */
+
+.status-message {
+  margin: 16px 0;
+  color: #6254d9;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.error-message {
+  margin: 16px 0;
+  padding: 12px;
+  border-radius: 10px;
+  background: #fff0f0;
+  color: #b42318;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Weather display */
+
+.weather-info {
+  padding-top: 8px;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  overflow-wrap: anywhere;
+}
+
+.location h2 {
+  color: #202b50;
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+/* Fix overlapping weather elements */
+
+.main-weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 24px 0;
+}
+
+.weather-icon {
+  display: block;
+  margin: 0;
+  font-size: 64px;
+  line-height: 1.2;
+}
+
+.main-weather h3 {
+  margin: 0;
+  color: #626b85;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.temperature {
+  margin: 0;
+  color: #202b50;
+  font-size: 76px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -3px;
+}
+
+.temperature span {
+  font-size: 36px;
+  vertical-align: top;
+}
+
+.feels-like {
+  margin: 0;
+  color: #68708a;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Humidity and wind cards */
+
+.weather-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.weather-card {
+  padding: 18px 10px;
+  border: 1px solid #e8eaf4;
+  border-radius: 16px;
+  background: #f7f8ff;
+  background-color: rgb(243, 237, 237);
+}
+
+.detail-icon {
+  display: block;
+  font-size: 27px;
+  line-height: 1.3;
+}
+
+.weather-card p {
+  margin: 8px 0;
+  color: #68708a;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.weather-card h3 {
+  color: #202b50;
+  font-size: 18px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+/* Timestamp and footer */
+
+.updated-time {
+  margin-top: 22px;
+  color: #7b8298;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+footer {
+  margin-top: 26px;
+  color: #8a90a5;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Responsive design */
+
+@media (max-width: 420px) {
+  .app {
+    padding: 20px 12px;
+  }
+
+  .container {
+    padding: 24px 18px;
+  }
+
+  .app-header h1 {
+    font-size: 26px;
+  }
+
+  .search-box {
+    flex-direction: column;
+  }
+
+  .search-box button {
+    width: 100%;
+  }
+
+  .location h2 {
+    font-size: 19px;
+  }
+
+  .weather-icon {
+    font-size: 56px;
+  }
+
+  .temperature {
+    font-size: 64px;
+  }
+
+  .temperature span {
+    font-size: 30px;
+  }
+
+  .weather-details {
+    gap: 10px;
+  }
+
+  .weather-card {
+    padding: 16px 8px;
+    background-color: rgb(243, 237, 237);
+  }
+}
